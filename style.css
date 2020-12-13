@@ -1,0 +1,38 @@
+html, body, #main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calculator {
+    height: 400px;
+    width: 300px;
+    border: 1px solid blue;
+}
+
+#screen {
+    height: 80px;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+#buttons {
+    height: 285px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    margin: 0 10px 0 10px;
+    border: 1px solid red;
+}
+
+button {
+    height: 100%;
+    width: 100%;
+}
+
+.clear {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
