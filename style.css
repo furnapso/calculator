@@ -1,21 +1,29 @@
+/* color pallette: https://coolors.co/05668d-427aa1-ebf2fa-679436-a5be00 */
+
 html, body, #main {
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Karla', sans-serif;
+    background-color: #EBF2FA;
 }
 
 #calculator {
     height: 400px;
     width: 300px;
-    border: 1px solid blue;
+    background-color: #427AA1;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 9px 5px 19px -9px rgba(0,0,0,0.59);
 }
 
 #screen {
     height: 80px;
     margin: 10px;
-    border: 1px solid black;
+    background-color: #EBF2FA;
+    border-radius: 10px;
 }
 
 #buttons {
@@ -24,12 +32,28 @@ html, body, #main {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     margin: 0 10px 0 10px;
-    border: 1px solid red;
+    column-gap: 10px;
+    row-gap: 10px;
 }
 
 button {
     height: 100%;
     width: 100%;
+    background-color: #A5BE00;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+button, button:active, button:focus {
+    border: none;
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #679436;
 }
 
 .clear {
