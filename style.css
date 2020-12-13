@@ -24,6 +24,14 @@ html, body, #main {
     margin: 10px;
     background-color: #EBF2FA;
     border-radius: 10px;
+    font-size: 30px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px 0 10px;
+    overflow: hidden;
+    line-height: 80px;
 }
 
 #buttons {
