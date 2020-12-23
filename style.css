@@ -8,6 +8,7 @@ html, body, #main {
     justify-content: center;
     font-family: 'Karla', sans-serif;
     background-color: #EBF2FA;
+    user-select: none;
 }
 
 #calculator {
@@ -32,6 +33,7 @@ html, body, #main {
     padding: 0 10px 0 10px;
     overflow: hidden;
     line-height: 80px;
+    white-space: nowrap;
 }
 
 #buttons {
