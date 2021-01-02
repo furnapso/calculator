@@ -25,10 +25,6 @@ function operate(operator, num1, num2) {
 
 function clearDisplay() {
     calcScreen.textContent = "";
-    output = 0;
-    a = undefined;
-    b = undefined;
-    operator = undefined;
 }
 
 function updateDisplay() {
