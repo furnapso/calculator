@@ -1,11 +1,11 @@
 const calcScreen = document.querySelector("#screen");
 document.querySelectorAll("button").forEach(button => {
-    if (button.classList.contains("clear")) {return}
+    if (button.classList.contains("clear") || button.classList.contains("equals")) {return}
     button.addEventListener('click', updateDisplay);
-    button.addEventListener('click', calculate);
 });
 
 document.querySelector(".clear").addEventListener('click', clearDisplay);
+document.querySelector(".equals").addEventListener('click', newCalculate)
 
 const operators = '÷×-+';
 const numbers = '1234567890'
@@ -41,9 +41,11 @@ function updateDisplay() {
             return
         }
 
-        else {
-            b = newContent;
+        else if (currentContent == "") {
+            calcScreen.textContent = newContent;
+        }
 
+        else {
             calcScreen.textContent = currentContent + " " + newContent;
         }
     }
@@ -60,10 +62,22 @@ function updateDisplay() {
 
 }
 
-let output = 0;
-let a;
-let b;
-let operator;
+function newCalculate() {
+    let result;
+    let a;
+    let b;
+    expression = calcScreen.textContent.split(" ");
+    if (expression.length >= 3 && expression.length % 2 != 0) {
+        for (let i = 0; i < expression.length - 2; i += 2) {
+            a = (a === undefined) ? parseInt(expression[i]) : result;
+            operator = expression[i+1];
+            b = parseInt(expression[i+2]);
+            result = operate(operator, a, b);
+        }
+
+        calcScreen.textContent = result;
+    }
+}
 
 function calculate() {
 
