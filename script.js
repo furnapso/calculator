@@ -5,7 +5,7 @@ document.querySelectorAll("button").forEach(button => {
 });
 
 document.querySelector(".clear").addEventListener('click', clearDisplay);
-document.querySelector(".equals").addEventListener('click', newCalculate)
+document.querySelector(".equals").addEventListener('click', calculate)
 
 const operators = '÷×-+';
 const numbers = '1234567890'
@@ -62,7 +62,7 @@ function updateDisplay() {
 
 }
 
-function newCalculate() {
+function calculate() {
     let result;
     let a;
     let b;
@@ -77,31 +77,4 @@ function newCalculate() {
 
         calcScreen.textContent = result;
     }
-}
-
-function calculate() {
-
-    newValue = this.textContent;
-
-    if (operators.includes(newValue)) {
-        if (a == undefined) return;
-        else operator = newValue;
-    }
-
-    else {
-        newValue = parseInt(newValue);
-        if (a == undefined) {
-            a = newValue;
-        }
-        
-        else if (operator != undefined) {
-            b = newValue;
-            output = operate(operator, a, b);
-            a = output;
-            b = undefined;
-            operator = undefined;
-        }
-    }
-
-    console.log(output);
 }
