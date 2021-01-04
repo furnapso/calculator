@@ -6,6 +6,7 @@ document.querySelectorAll("button").forEach(button => {
 
 document.querySelector(".clear").addEventListener('click', clearDisplay);
 document.querySelector(".equals").addEventListener('click', calculate)
+document.addEventListener('keydown', keyHandler);
 
 const operators = '÷×-+';
 const numbers = '1234567890'
@@ -78,4 +79,14 @@ function calculate() {
 
         calcScreen.textContent = result;
     }
+}
+
+function keyHandler(event) {
+    let key = event.key;
+
+    key = (key == "Enter") ? "=" : key;
+
+    try {
+        document.querySelector(`button[data-key="${key}"]`).click();
+    } catch (error) {}
 }
