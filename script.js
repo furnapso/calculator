@@ -48,6 +48,11 @@ function updateDisplay() {
 
     else {
         if (operators.includes(newContent.slice(-1))) {
+            if (currentContent.split(" ").length == 3) {
+                calculate();
+                currentContent = calcScreen.textContent;
+            }
+
             calcScreen.textContent = currentContent + " " + newContent;
         }
         
