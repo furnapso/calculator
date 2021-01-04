@@ -32,6 +32,15 @@ function updateDisplay() {
     let currentContent = calcScreen.textContent;
     let newContent = this.textContent;
 
+    if (newContent == "." && currentContent.slice(-1) == ".") {
+        return
+    }
+
+    if (newContent == "." && currentContent == "") {
+        calcScreen.textContent = "0.";
+        return
+    }
+
     if (operators.includes(currentContent.slice(-1))) {
 
         if (operators.includes(newContent.slice(-1))) {
@@ -71,9 +80,9 @@ function calculate() {
     expression = calcScreen.textContent.split(" ");
     if (expression.length >= 3 && expression.length % 2 != 0) {
         for (let i = 0; i < expression.length - 2; i += 2) {
-            a = (a === undefined) ? parseInt(expression[i]) : result;
+            a = (a === undefined) ? parseFloat(expression[i]) : result;
             operator = expression[i+1];
-            b = parseInt(expression[i+2]);
+            b = parseFloat(expression[i+2]);
             result = operate(operator, a, b);
         }
 
